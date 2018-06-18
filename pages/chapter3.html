@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Электронный учебный модуль</title>
+	<script type="javascript" type="text/javascript">
+	<!--
+	function openClose(id)
+	{
+		var obj = "";	
+
+		// Check browser compatibility
+		if(document.getElementById)
+			obj = document.getElementById(id).style;
+		else if(document.all)
+			obj = document.all[id];
+		else if(document.layers)
+			obj = document.layers[id];
+		else
+			return 1;
+			
+		// Smarter's magic :)
+		if(obj.display == "")
+			obj.display = "none";
+		else if(obj.display != "none")
+			obj.display = "none";
+		else
+			obj.display = "block";
+	}
+	//-->
+	</script>
+	<link href="../css/styles.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../js/custom.js"></script>
+</head>
+<body>
+		<header>
+			<nav class="top-nav container">
+					<div class="top-left-nav">
+						 <div class="breadcrumb">
+							<a href="../index.html"  target="_self">Главная страница</a>
+							<a href="../pages/chapter1.html" target="_self">Глава 1</a>
+							<a href="../pages/chapter2.html" target="_self">Глава 2</a>
+							<a href="../pages/chapter3.html" class="active" target="_self">Глава 3</a>
+							<a href="../pages/questions.html" target="_self">Вопросы для самоконтроля</a>
+						</div>
+					</div>
+					<div class="top-right-nav">
+						<ul>
+							<li>Мцитуридзе Николоз Зурабович, <i>ИКМО 01-16</i></li>
+							<li><a href="../pages/help.html"><img src="../images/logos/help.png" width="36px" height="36px"/>Помошь</a></li>
+						</ul>
+					</div>
+			</nav>
+		</header>
+		<div class="container">
+			<div class="content">
+				<h1>Часть 3. Задача замены оборудования длительного пользования</h1>
+				<div class="main-content">
+					<p>Постановка задачи и выбор критерия оптимизации</p>
+					<button type="button" class="content-opener">Постановка задачи</button>
+					<div>
+						<p>Пусть в эксплуатации находится некоторое оборудование. Покупная цена нового оборудования известна и равна S. Допустим, что известны затраты на эксплуатацию оборудования (уход за ним, ремонт и т.д.), производимые в начале (1, 2, …,t,…,n) периодов. Предположим, что периоды равны, например году. Обозначим затраты, производимые в t-й период, через C<sub>t</sub>. В результате старения балансовая цена оборудования непрерывно падает и зависит от периода списания, обозначим ее S<sub>t</sub>. Требуется определить период списания оборудования, чтобы затраты на единицу времени были минимальны.</p>
+					</div>
+					<button type="button" class="content-opener">Выявление основных особенностей, взаимосвязей и количественных закономерностей.</button>
+					<div>
+						<p>
+							Рассмотрим задачу, в которой известны эксплуатационные затраты в разные периоды (дискретную) C1, C2,…, Ct, … (естественно, что Ct+1>Ct), а также значения S1, S2,…,St,…, (St+1>St), и непрерывные задачи, в которых известны зависимости. </br></br>
+							  <img src="image/f4.1.JPG" width="250" height="50">
+							<p>При этом ограничимся рассмотрением трех случаев, когда:</p>
+								<ol>
+									<li>С<sub>t</sub> и S<sub>t</sub> линейно зависят от t: </br>
+										<p>C<sub>t</sub>=a<sub>1</sub>t, S<sub>t</sub>=b<sub>0</sub>+b<sub>1</sub>t;</p>
+									</li>
+									<li>С<sub>t</sub> и S<sub>t</sub> квадратично зависят от t (по параболе): 
+										<p>C<sub>t</sub>=a<sub>1</sub>t+a<sup>2</sup>t<sub>2</sub>, S<sub>t</sub>=b<sub>0</sub>+b<sub>1</sub>t+b<sub>2</sub>t<sup>2</sup>;</p>
+									</li>
+									<li>С<sub>t</sub> и S<sub>t</sub> экспоненциально зависят от t: </br>
+									<p>C<sub>t</sub>=a<sub>0</sub> (e<sub>t</sub>-1), S<sub>t</sub>=b<sub>0</sub>e<sup>t</sup>.</p>
+									</li>
+								</ol>
+							<p>Это связано с заменой оборудования, подверженного износу. Все три случая можно представить графически (рис. 4.1). 
+							</p>
+							<a href = "image/f4.2.JPG" target= "_blank"><img src="image/f4.2.JPG" width="561" height="564" align="center">
+							</a>
+							<p>Рис. 4.1. Зависимости эксплуатационных затрат и балансовой стоимости оборудования от времени </p>
+
+						</p>
+					</div>
+					<button type="button" class="content-opener">Построение математической модели.</button>
+					<div>
+						<p>
+							Средние затраты равны:
+						</p>
+						<a href="image/f4.3.JPG" target = "_blank"><img src="image/f4.3.JPG" width="621" height="293" border="0"></a>
+						<p>Для всех этих случаев b0=S, так как S0=S.</p>
+					</div>
+					<button type="button" class="content-opener">Исследование математической модели</button>
+					<div>
+					   <p>Рассмотрим все указанные случаи.</p>
+					   <p align="justify">Чтобы затраты при замене оборудования через t периодов были наименьшими, естественно, должно выполняться условие</p>
+					   <p><a href = "image/f4.4.JPG" target= "_blank"><img src="image/f4.4.JPG" width="211" height="52"></a></p> 
+					   <p>или в развернутом виде </p>
+					   <p align="justify"><a href="image/f4.5.JPG" target= "_blank"><img src="image/f4.5.JPG" width="655" height="204" border="0"></a></p>
+					   <p>После соответствующих преобразований получим окончательно</p>
+					   <p align="justify"><a href="image/f4.6.JPG" target= "_blank"><img src="image/f4.6.JPG" width="527" height="48" border="0"></a></p>
+					   <p>Это условие при любых соотношениях между величинами Ct и St является необходимым условием оптимальности стратегии, а так как C<sub>t+1</sub>C<sub>t</sub> и S<sub>t+1</sub> < S<sub>t</sub>, то написанное условие является еще и достаточным условием оптимальности; </p>
+					   <p><a href = "image/f4.7.JPG" target= "_blank"><img src="image/f4.7.JPG" width="248" height="67"></a></p>
+					   <p>Оптимального периода списания нет. Если функции C<sub>t</sub> и S<sub>t</sub> линейные, то средние издержки эксплуатации оборудования будут постоянны, поэтому, если хотят произвести замену в любое время, достаточно обеспечить линейность характеристик C<sub>t</sub> и S<sub>t</sub>;</p>
+					   <p><a href = "image/f4.8.JPG" target= "_blank"><img src="image/f4.8.JPG" width="384" height="73"></a></p>
+					   <p>в этом случае средние издержки линейно зависят от периода эксплуатации;</p>
+					   <p><a href = "image/f4.9.JPG" target= "_blank"><img src="image/f4.9.JPG" width="531" height="77"></a></p>
+					   <p>После соответствующих преобразований получим</p>
+					   <p><a href = "image/f4.10.JPG" target= "_blank"><img src="image/f4.10.JPG" width="473" height="48"></a></p>
+					   <p>Решать это уравнение целесообразно графически, обозначив предварительно</p>
+					   <p><a href = "image/f4.11.JPG" target= "_blank"><img src="image/f4.11.JPG" width="600" height="47"></a></p>
+					      <p>Точка пересечения и дает искомое время t, при котором необходимо произвести замену оборудования.</p>
+
+					</div>
+				</div>
+			</div>
+			<nav class="bottom-nav">
+				<ul>
+					<li><a class="left-nav" href="../pages/chapter2.html" target="_self"><img src="../images/navigation/arrow_left.png" /></a></li>
+					<li><a class="home-nav" href="../index.html" target="_self"><img src="../images/navigation/homes.png" /></a></li>
+					<li><a class="right-nav" href="../pages/questions.html" target="_self"><img src="../images/navigation/arrow_right.png" /></a></li>
+				</ul>
+			</nav>
+		</div>
+</body>
+</html>
